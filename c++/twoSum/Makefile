@@ -17,6 +17,7 @@ objs : $(OBJS)
 
 clean :
 	rm -f $(OBJS)
+	rm -f $(EXECUTABLE)
 
 $(EXECUTABLE) : $(OBJS)
 	$(CC) -o $(EXECUTABLE) $(OBJS) $(addprefix -l,$(LIBS))
