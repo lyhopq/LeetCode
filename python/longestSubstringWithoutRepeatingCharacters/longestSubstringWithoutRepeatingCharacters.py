@@ -18,7 +18,6 @@ def lengthOfLongestSubstring(str):
     for index, c in enumerate(str):
         lastIndex = occur.get(c, None)
         if lastIndex is None:
-            occur[c] = index
             length += 1
         else:
             for i in range(startIndex, lastIndex):
@@ -26,7 +25,7 @@ def lengthOfLongestSubstring(str):
             if length > longest: longest = length
             startIndex = lastIndex + 1
             length = index - lastIndex
-            occur[c] = index
+        occur[c] = index
 
     if length > longest: longest = length
 
